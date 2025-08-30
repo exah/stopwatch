@@ -2,7 +2,7 @@
 
 > A tiny stopwatch web-app
 
-![](./screenshot.png)
+<img src="./screenshot.png" width="585px" alt="" />
 
 - [x] Full-featured stopwatch app
 - [x] Record laps and download as JSON
