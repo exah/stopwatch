@@ -7,6 +7,7 @@ import { ProgressCircle } from '../progress-circle'
 import { HStack } from '../h-stack'
 import { Surface } from '../surface'
 import { Text } from '../text'
+import { Timer } from '../timer'
 import { VStack } from '../v-stack'
 import { ZStack } from '../z-stack'
 
@@ -75,22 +76,8 @@ export function Stopwatch() {
   return (
     <Surface>
       <VStack gap={24}>
-        <ZStack>
-          <VStack style={{ placeSelf: 'center' }}>
-            <Text
-              variant="label"
-              style={{
-                transition: 'opacity 0.25s',
-                opacity: laps.length === 0 ? 0 : 1,
-              }}
-              asChild
-            >
-              <h3>Lap {laps.length}</h3>
-            </Text>
-            <Text variant="time" asChild>
-              <p>{formatTime(elapsed)}</p>
-            </Text>
-          </VStack>
+        <ZStack style={{ placeItems: 'center' }}>
+          <Timer lap={laps.length} time={elapsed} />
           <ProgressCircle
             className={sprinkles({ color: 'yellow-50' })}
             size={360}
