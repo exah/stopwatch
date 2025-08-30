@@ -8,7 +8,7 @@ export const textRecipe = recipe({
         fontFamily: theme.fonts['sans-serif'],
         fontStyle: 'normal',
         fontWeight: 400,
-        fontSize: '62px',
+        fontSize: ['62px', 'clamp(36px, 9vw + 16px, 62px)'],
         lineHeight: 1.1875,
         fontFeatureSettings: "'tnum' on, 'lnum' on",
       },
