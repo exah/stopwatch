@@ -7,7 +7,7 @@
     "start": "npm run dev",
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "test": "vitest",
+    "test": "vitest --exclude '**/*.test.tsx'",
     "lint": "eslint .",
     "preview": "vite preview",
     "test-ct": "playwright test -c playwright-ct.config.ts"
