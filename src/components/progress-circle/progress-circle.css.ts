@@ -17,8 +17,20 @@ export const circleRecipe = recipe({
     transform: 'rotate(-90deg)',
     transitionProperty: 'opacity',
     transitionDuration: '0.5s',
+    fill: 'none',
   },
   variants: {
+    variant: {
+      grey: {
+        stroke: theme.color['grey-90'],
+      },
+      yellow: {
+        stroke: theme.color['yellow-50'],
+      },
+      orange: {
+        stroke: theme.color['orange-50'],
+      },
+    },
     animated: {
       true: {
         transitionProperty: 'stroke-dashoffset, opacity',

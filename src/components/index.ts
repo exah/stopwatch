@@ -1,6 +1,6 @@
 export * from './box'
 export * from './button'
-export * from './circle'
+export * from './progress-circle'
 export * from './h-stack'
 export * from './root'
 export * from './slot'

@@ -5,7 +5,7 @@ export const textRecipe = recipe({
   variants: {
     variant: {
       time: {
-        fontFamily: theme.font['sans-serif'],
+        fontFamily: theme.fonts['sans-serif'],
         fontStyle: 'normal',
         fontWeight: 400,
         fontSize: '62px',
@@ -13,7 +13,7 @@ export const textRecipe = recipe({
         fontFeatureSettings: "'tnum' on, 'lnum' on",
       },
       label: {
-        fontFamily: theme.font['sans-serif'],
+        fontFamily: theme.fonts['sans-serif'],
         fontStyle: 'normal',
         fontWeight: 600,
         fontSize: '16px',
@@ -21,7 +21,7 @@ export const textRecipe = recipe({
         textTransform: 'uppercase',
       },
       button: {
-        fontFamily: theme.font['sans-serif'],
+        fontFamily: theme.fonts['sans-serif'],
         fontStyle: 'normal',
         fontWeight: 600,
         fontSize: '18px',

@@ -3,7 +3,7 @@ import { sprinkles } from '../../theme'
 import { formatTime } from '../../utils'
 import { Time } from '../../constants'
 import { Button } from '../button'
-import { Circle } from '../circle'
+import { ProgressCircle } from '../progress-circle'
 import { HStack } from '../h-stack'
 import { Surface } from '../surface'
 import { Text } from '../text'
@@ -91,13 +91,7 @@ export function Stopwatch() {
               <p>{formatTime(elapsed)}</p>
             </Text>
           </VStack>
-          <Circle
-            className={sprinkles({ color: 'grey-90' })}
-            size={360}
-            stroke={12}
-            progress={1}
-          />
-          <Circle
+          <ProgressCircle
             className={sprinkles({ color: 'yellow-50' })}
             size={360}
             stroke={12}
