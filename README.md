@@ -1,69 +1,54 @@
-# React + TypeScript + Vite
+# ⏱️ Stopwatch
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> A tiny stopwatch web-app
 
-Currently, two official plugins are available:
+![](./screenshot.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [x] Full-featured stopwatch app
+- [x] Record laps and download as JSON
+- [x] Written using [vite](https://vite.dev) with [React](https://react.dev) and strongly typed [TypeScript](https://www.typescriptlang.org)
+- [x] Styled using [vanilla-extract](https://vanilla-extract.style)
+- [x] Tested with [vitest](https://vitest.dev) and [playwright](https://playwright.dev/docs/test-components)
 
-## Expanding the ESLint configuration
+## Requirements
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [`node`](https://nodejs.org/en) v22.19.00+
+- [`npm`](https://npmjs.com) v10.9.3+
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Install dependencies with `npm`:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```shell
+npm i
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Start dev server:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```shell
+npm start
 ```
+
+And follow the [vite](https://vite.dev) instructions in terminal to open the app.
+
+## Designs
+
+You can find designs for the app in the Figma [here](https://www.figma.com/design/tSsfDRYEyhqgQhlugd6f3V/stopwatch?node-id=0-1&t=ckaNTSwiqAdDcVIv-1).
+
+## Tests
+
+Run unit tests on helpers:
+
+```shell
+npm t
+```
+
+Run component test with real browsers:
+
+```shell
+npm run test-ct
+```
+
+---
+
+MIT © [John Grishin](http://johngrish.in)
