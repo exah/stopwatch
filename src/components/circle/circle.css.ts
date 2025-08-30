@@ -15,11 +15,13 @@ export const circleRecipe = recipe({
     transformBox: 'fill-box',
     transformOrigin: 'center',
     transform: 'rotate(-90deg)',
+    transitionProperty: 'opacity',
+    transitionDuration: '0.5s',
   },
   variants: {
     animated: {
       true: {
-        transition: 'stroke-dashoffset 0.5s',
+        transitionProperty: 'stroke-dashoffset, opacity',
       },
     },
   },

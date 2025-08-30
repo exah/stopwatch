@@ -41,6 +41,7 @@ export function Circle({
         strokeDashoffset={strokeDashoffset}
         strokeLinecap="round"
         strokeWidth={stroke}
+        style={{ opacity: progress === 0 ? 0 : 1 }}
       />
     </svg>
   )

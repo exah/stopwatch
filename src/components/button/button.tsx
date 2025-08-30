@@ -9,7 +9,11 @@ export interface ButtonProps
 export function Button({ className, variant, ...rest }: ButtonProps) {
   return (
     <Text variant="button" asChild>
-      <button className={cx(className, buttonRecipe({ variant }))} {...rest} />
+      <button
+        type="button"
+        className={cx(className, buttonRecipe({ variant }))}
+        {...rest}
+      />
     </Text>
   )
 }

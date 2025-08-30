@@ -1,6 +1,6 @@
 import { Box, type BoxProps } from '../box'
-import { textRecipe, type TextVariants } from './text.css'
 import { cx } from '../../utils'
+import { textRecipe, type TextVariants } from './text.css'
 
 interface TextProps extends BoxProps, TextVariants {}
 
