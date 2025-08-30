@@ -21,7 +21,7 @@ export function Timer({ lap, time }: TimerProps) {
         <h3>Lap {lap}</h3>
       </Text>
       <Text variant="time" asChild>
-        <p>{formatTime(time)}</p>
+        <h2>{formatTime(time)}</h2>
       </Text>
     </VStack>
   )

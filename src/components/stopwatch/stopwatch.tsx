@@ -26,6 +26,7 @@ export function Stopwatch() {
             stroke={12}
             progress={progress}
             animated={progress === 0}
+            aria-label="Second"
           />
         </ZStack>
         <HStack
@@ -38,7 +39,7 @@ export function Stopwatch() {
             onAction={stopwatch.action}
           />
         </HStack>
-        <LapList.Root>
+        <LapList.Root aria-label="Laps">
           {stopwatch.laps.map((lapTime, lapIndex) => (
             <LapList.Item key={lapIndex} lap={lapIndex + 1} time={lapTime} />
           ))}

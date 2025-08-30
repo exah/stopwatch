@@ -3,24 +3,22 @@ import { HStack } from '../h-stack'
 import { Text } from '../text'
 import { VStack } from '../v-stack'
 
-interface LapListProps {
-  children?: React.ReactNode
-}
+interface LapListProps extends React.HTMLAttributes<HTMLUListElement> {}
 
-function LapList({ children }: LapListProps) {
+function LapList(props: LapListProps) {
   return (
     <VStack gap={8} asChild>
-      <ul>{children}</ul>
+      <ul {...props} />
     </VStack>
   )
 }
 
-interface LapListItemProps {
+interface LapListItemProps extends React.HTMLAttributes<HTMLLIElement> {
   lap: number
   time: number
 }
 
-function LapListItem({ lap, time }: LapListItemProps) {
+function LapListItem({ lap, time, ...rest }: LapListItemProps) {
   return (
     <HStack
       gap={16}
@@ -31,9 +29,12 @@ function LapListItem({ lap, time }: LapListItemProps) {
       }}
       asChild
     >
-      <li>
+      <li {...rest}>
         <Text variant="label" asChild>
-          <span>Lap {lap}</span>
+          <span>
+            Lap {lap}
+            <span style={{ opacity: 0 }}>:&nbsp;</span>
+          </span>
         </Text>
         <Text variant="label" asChild>
           <span>{formatTime(time)}</span>
