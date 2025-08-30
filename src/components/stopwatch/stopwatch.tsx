@@ -1,15 +1,14 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { sprinkles } from '../../theme'
-import { formatTime } from '../../utils'
 import { Time } from '../../constants'
 import { Button } from '../button'
 import { ProgressCircle } from '../progress-circle'
 import { HStack } from '../h-stack'
 import { Surface } from '../surface'
-import { Text } from '../text'
 import { Timer } from '../timer'
 import { VStack } from '../v-stack'
 import { ZStack } from '../z-stack'
+import { LapList } from '../lap-list'
 
 export function Stopwatch() {
   const [state, setState] = useState<'idle' | 'running' | 'stopped'>('idle')
@@ -118,31 +117,11 @@ export function Stopwatch() {
             </Button>
           )}
         </HStack>
-        <VStack gap={8} asChild>
-          <ul>
-            {laps.map((lapTime, index) => (
-              <HStack
-                key={index}
-                gap={16}
-                padding={8}
-                style={{
-                  gridAutoColumns: 'auto',
-                  justifyContent: 'space-between',
-                }}
-                asChild
-              >
-                <li>
-                  <Text variant="label" asChild>
-                    <span>Lap {index + 1}</span>
-                  </Text>
-                  <Text variant="label" asChild>
-                    <span>{formatTime(lapTime)}</span>
-                  </Text>
-                </li>
-              </HStack>
-            ))}
-          </ul>
-        </VStack>
+        <LapList.Root>
+          {laps.map((lapTime, lapIndex) => (
+            <LapList.Item key={lapIndex} lap={lapIndex + 1} time={lapTime} />
+          ))}
+        </LapList.Root>
       </VStack>
     </Surface>
   )

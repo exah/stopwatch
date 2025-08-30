@@ -1,6 +1,7 @@
 export * from './box'
 export * from './button'
 export * from './h-stack'
+export * from './lap-list'
 export * from './progress-circle'
 export * from './root'
 export * from './slot'
