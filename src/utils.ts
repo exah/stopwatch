@@ -58,9 +58,7 @@ export function extractSprinklesAndCleanupProps<
 
   for (const key of sprinkles.properties) {
     if (props[key] != null) {
-      // Not using styles[key] = props[key] due to mixed and strict signature of props
-      // Means we cannot assign color properties to spacing ones, as we can't (easily) verify key value pair, but we are sure here it's valid
-      Object.assign(styles, { [key]: props[key] })
+      styles[key] = props[key]
     }
 
     delete props[key]
